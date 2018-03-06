@@ -8,7 +8,7 @@ export default class ScrollListener extends PureComponent {
   state = {
     scroll: 0,
     element: this.props.element || document.body,
-    container: this.props.container || window
+    container: this.props.container || (typeof window !== 'undefined' ? window : undefined)
   }
 
   componentDidMount () {
